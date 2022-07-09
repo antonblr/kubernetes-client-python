@@ -1349,7 +1349,6 @@ class CustomObjectsApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/merge-patch+json'
                 ]
             },
@@ -1443,7 +1442,6 @@ class CustomObjectsApi(object):
                     'application/vnd.kubernetes.protobuf'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/merge-patch+json'
                 ]
             },
@@ -1537,7 +1535,6 @@ class CustomObjectsApi(object):
                     'application/vnd.kubernetes.protobuf'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/merge-patch+json'
                 ]
             },
@@ -1635,7 +1632,6 @@ class CustomObjectsApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/merge-patch+json'
                 ]
             },
@@ -1735,9 +1731,7 @@ class CustomObjectsApi(object):
                     'application/vnd.kubernetes.protobuf'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/merge-patch+json',
-                    'application/apply-patch+yaml'
                 ]
             },
             api_client=api_client
@@ -1836,9 +1830,7 @@ class CustomObjectsApi(object):
                     'application/vnd.kubernetes.protobuf'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/merge-patch+json',
-                    'application/apply-patch+yaml'
                 ]
             },
             api_client=api_client
