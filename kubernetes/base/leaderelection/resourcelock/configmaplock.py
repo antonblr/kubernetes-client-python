@@ -13,8 +13,7 @@
 # limitations under the License.
 
 from kubernetes.client.rest import ApiException
-from kubernetes import client, config
-from kubernetes.client.api_client import ApiClient
+from kubernetes.client.api.core_v1_api import CoreV1Api, V1ConfigMap
 from ..leaderelectionrecord import LeaderElectionRecord
 import json
 import logging
@@ -28,7 +27,7 @@ class ConfigMapLock:
         :param namespace: namespace
         :param identity: A unique identifier that the candidate is using
         """
-        self.api_instance = client.CoreV1Api()
+        self.api_instance = CoreV1Api()
         self.leader_electionrecord_annotationkey = 'control-plane.alpha.kubernetes.io/leader'
         self.name = name
         self.namespace = namespace
@@ -78,7 +77,7 @@ class ConfigMapLock:
         :param namespace: Namespace in which the configmap object is to be created
         :return: 'True' if object is created else 'False' if failed
         """
-        body = client.V1ConfigMap(
+        body = V1ConfigMap(
             metadata={"name": name,
                       "annotations": {self.leader_electionrecord_annotationkey: json.dumps(self.get_lock_dict(election_record))}})
 
