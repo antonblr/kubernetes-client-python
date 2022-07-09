@@ -18,7 +18,7 @@ import yaml
 
 from kubernetes.client import api_client
 from kubernetes.client.api import apps_v1_api
-from kubernetes.client.models import v1_delete_options
+from kubernetes.client.models import V1DeleteOptions
 from kubernetes.e2e_test import base
 
 
@@ -58,7 +58,7 @@ spec:
         resp = api.read_namespaced_deployment(name, 'default')
         self.assertIsNotNone(resp)
 
-        options = v1_delete_options.V1DeleteOptions()
+        options = V1DeleteOptions()
         resp = api.delete_namespaced_deployment(name, 'default', body=options)
 
     def test_create_daemonset(self):
@@ -96,5 +96,5 @@ spec:
         resp = api.read_namespaced_daemon_set(name, 'default')
         self.assertIsNotNone(resp)
 
-        options = v1_delete_options.V1DeleteOptions()
+        options = V1DeleteOptions()
         resp = api.delete_namespaced_daemon_set(name, 'default', body=options)

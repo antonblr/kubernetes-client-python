@@ -102,7 +102,7 @@ class Watch(object):
         # efficient WATCH
         if return_type and js['type'] != 'ERROR' and js['type'] != 'BOOKMARK':
             obj = SimpleNamespace(data=json.dumps(js['raw_object']))
-            js['object'] = self._api_client.deserialize(obj, return_type)
+            js['object'] = self._api_client.deserialize(obj, return_type, _check_type=True)
             if hasattr(js['object'], 'metadata'):
                 self.resource_version = js['object'].metadata.resource_version
             # For custom objects that we don't have model defined, json
