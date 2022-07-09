@@ -1,6 +1,7 @@
 # V1NetworkPolicy
 
 NetworkPolicy describes what network traffic is allowed for a set of Pods
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,7 @@ Name | Type | Description | Notes
 **metadata** | [**V1ObjectMeta**](V1ObjectMeta.md) |  | [optional] 
 **spec** | [**V1NetworkPolicySpec**](V1NetworkPolicySpec.md) |  | [optional] 
 **status** | [**V1NetworkPolicyStatus**](V1NetworkPolicyStatus.md) |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
